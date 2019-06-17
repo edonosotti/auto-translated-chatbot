@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "lex:PostText",
+                "comprehend:DetectDominantLanguage",
+                "translate:TranslateText"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "FORECAST": "{{weather_state_name}}, {{min_temp}}-{{max_temp}} °C, wind {{wind_direction_compass}} {{wind_speed}} MPH, humidity {{humidity}}%, visibility {{visibility}} mi",
+  "DID_NOT_UNDERSTAND": "Sorry, I cannot do that.",
+  "MISSING_LOCATION": "Please specify a location to get the forecast for",
+  "GENERIC_ERROR": "I am sorry, something went wrong :("
+}

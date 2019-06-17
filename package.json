@@ -1,0 +1,31 @@
+{
+  "name": "auto-translated-chatbot",
+  "version": "1.0.0",
+  "description": "A chatbot with automated language translations, using AWS Lex and Translate.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "keywords": [
+    "chatbot",
+    "aws",
+    "lex",
+    "translate",
+    "nlp"
+  ],
+  "author": "Edoardo Nosotti",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.474.0",
+    "claudia-bot-builder": "^4.5.0",
+    "mustache": "^3.0.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^4.4.0",
+    "claudia": "^5.5.0",
+    "mocha": "^6.1.4",
+    "nock": "^10.0.6",
+    "rewire": "^4.0.1"
+  }
+}

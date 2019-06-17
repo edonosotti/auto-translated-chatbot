@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "WeatherBot",
+    "version": "1",
+    "intents": [
+      {
+        "name": "GetWeatherForecast",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "What is the weather like in {Location}",
+          "What is the weather in {Location}",
+          "What will be the weather like in {Location} on {Date}",
+          "What will be the weather like on {Date}",
+          "What will be the weather on {Date}",
+          "What is the weather like"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.DATE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "When?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "Date"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "Location",
+            "slotTypeVersion": "1",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "Location"
+          }
+        ]
+      }
+    ],
+    "slotTypes": [
+      {
+        "description": "Location",
+        "name": "Location",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "San Francisco",
+            "synonyms": []
+          },
+          {
+            "value": "New York",
+            "synonyms": []
+          },
+          {
+            "value": "Milan",
+            "synonyms": []
+          },
+          {
+            "value": "Rome",
+            "synonyms": []
+          },
+          {
+            "value": "Chicago",
+            "synonyms": []
+          },
+          {
+            "value": "London",
+            "synonyms": []
+          },
+          {
+            "value": "Los Angeles",
+            "synonyms": []
+          },
+          {
+            "value": "Boston",
+            "synonyms": []
+          },
+          {
+            "value": "Prague",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ],
+    "voiceId": "Matthew",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    }
+  }
+}
