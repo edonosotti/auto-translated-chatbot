@@ -1,3 +1,6 @@
+[![codebeat badge](https://codebeat.co/badges/38afd549-026d-4646-ba9f-74f03ef6e381)](https://codebeat.co/projects/github-com-edonosotti-auto-translated-chatbot-master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b9865934da283638a381/maintainability)](https://codeclimate.com/github/edonosotti/auto-translated-chatbot/maintainability)
+
 # A multi-language chatbot with automated translation
 
 
