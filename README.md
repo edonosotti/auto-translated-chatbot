@@ -18,21 +18,28 @@ such as `Facebook Messenger`, `Telegram`, `Skype`, `Slack` and also `Amazon Echo
 `claudia-bot-builder` runs on [`Amazon Lambda`](https://aws.amazon.com/lambda/) and
 [`Amazon API Gateway`](https://aws.amazon.com/api-gateway/).
 
+Read [this article](https://medium.com/rockedscience/building-a-multi-language-chatbot-with-automated-translations-e2acd053bc5c)
+to find out more.
+
 ### Caveats
 
-This chatbot is meant to prototype a new service or product and run the first iterations
-over it. Although it can scale virtually infinitely using the Amazon platform, for the long
-run it is most probably better to switch to human-curated translations and save on the
-requests issued to Lex and Translate, that are billed per-use.
+ * This chatbot is meant to prototype a new service or product and run the first iterations
+   over it. Although it can scale virtually infinitely using the Amazon platform, for the long
+   run it is most probably better to switch to human-curated translations and save on the
+   requests issued to Lex and Translate, that are billed per-use.
 
-At the time of writing all the Amazon services listed above offer limited (by time and/or
-requests) free tiers that *SHOULD* allow users to test this chatbot for free. Please
-check the latest terms & conditions of the Amazon Web Services platforms before deploying
-and running this application to **avoid surprise charges**.
+ * The AWS free tier *SHOULD* allow you to test this bot for free, but please read its terms
+   and conditions carefully. You may be charged for AWS services usage. In particular, Lex
+   and Translate free tiers only last for 12 months after the first request
+   (at the time of writing). So if your account is older than that you may have already
+   used up your free tier. Also, all services subject to the free tier do enforce usage
+   limits for it. Make sure that your usage is within those limits. Be safe and set an
+   [AWS Budget](https://aws.amazon.com/aws-cost-management/aws-budgets/)
+   to detect unwanted or excessive charges early on. You are responsible for that.
 
-The training data (city names) provided to the chatbot for the `Location` slot is very
-minimal and not enough for the machine learning to properly determine its nature, so
-stick to the provided list of cities when testing the bot. Other cities might not work.
+ * The training data (city names) provided to the chatbot for the `Location` slot is very
+   minimal and not enough for the machine learning to properly determine its nature, so
+   stick to the provided list of cities when testing the bot. Other cities might not work.
 
 
 ## Requirements
@@ -57,8 +64,8 @@ it has been included as a *local* dependency.
 
 #### 1. Creating the Lex bot
 
-Zip the [`aws/lex/WeatherBot_Export.json`] file and import it
-using the `Lex` console:
+Zip the [`aws/lex/WeatherBot_Export.json`](aws/lex/WeatherBot_Export.json)
+file and import it using the `Lex` console:
 
  1. Sign in to the AWS Management Console and open the [Amazon Lex console, Bots page](https://console.aws.amazon.com/lex/home?#bots:).
  2. From `Actions`, choose `Import`.
@@ -121,6 +128,22 @@ only [a few steps](https://core.telegram.org/bots#3-how-do-i-create-a-bot).
     and follow the instructions shown on the screen.
 
 
+## Usage
+
+This bot uses the [`MetaWeather API`](https://www.metaweather.com/api/) to deliver the
+weather forecast. You can ask it:
+
+```
+How is the weather in Milan?
+How will the weather be like in Boston on monday?
+```
+
+in any language supported by `Amazon Translate` that can be translated to English.
+Please read the **Caveats** paragraph above and see the
+[`aws/lex/WeatherBot_Export.json`](aws/lex/WeatherBot_Export.json) file for the list
+of cities that are safe to use in this demo.
+
+
 ## Tests
 
 Run:
@@ -130,9 +153,11 @@ $ npm install
 $ npm test
 ```
 
+
 ## License
 
 This code is released under the [`MIT license`](LICENSE).
 Please read it carefully before using it.
 
 ![Screenshot on Telegram](doc/img/telegram.png)
+
