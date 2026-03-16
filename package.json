@@ -16,7 +16,7 @@
   "author": "Edoardo Nosotti",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.474.0",
+    "aws-sdk": "^2.814.0",
     "claudia-bot-builder": "^4.5.0",
     "mustache": "^3.0.1",
     "node-fetch": "^2.6.0"
